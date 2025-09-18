@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Target
+  - Cat
+  - Interactible
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Cat
   - Interactible
   - Walkable
-  - 
+  - Jumpable
   - 
   - 
   - 
