@@ -25,14 +25,34 @@ public class Cat : MonoBehaviour
         m_actiontimer += Time.deltaTime;
 
         
-        int actionTime = Random.Range(1, 20);
+        int actionTime = 3;
 
         if (m_actiontimer > actionTime)
         {
-            print(actionTime);
+           
+            int action = Random.Range(0, 2);
+            print(action);
             m_actiontimer = 0;
         }
         
+    }
+
+
+    void DoSomething(int action)
+    {
+
+        if (action == 0)
+        {
+
+        }
+
+    }
+
+    private int GetRnd()
+    {
+        int rnd = Random.Range(1, 10);
+
+        return rnd;
     }
 
 
