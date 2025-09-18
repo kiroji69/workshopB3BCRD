@@ -6,7 +6,7 @@ public class Cat : MonoBehaviour
 {
     [SerializeField] Rigidbody2D m_rb;
     [SerializeField] SpriteRenderer m_sprite;
-    [SerializeField] Animator m_animator;
+    [SerializeField] internal Animator m_animator;
     [SerializeField] LayerMask m_walkableMask;
     [SerializeField] LayerMask m_interactible;
     [SerializeField] LayerMask m_jumpLayers;
@@ -26,6 +26,8 @@ public class Cat : MonoBehaviour
     [SerializeField] int m_attentionRange;
     [SerializeField] public bool m_jumpCheck = true;
 
+
+    
     private void Start()
     {
        
@@ -71,7 +73,7 @@ public class Cat : MonoBehaviour
                 foreach(JumpPoint jumpPoint in jp.jumpPoints)
                 {
                     Vector2 vForce = jumpPoint.endPoint.position - (Vector3)m_rb.position;
-                    print(" dot: " + Vector2.Dot(vForce.normalized, target.normalized));
+                    //print(" dot: " + Vector2.Dot(vForce.normalized, target.normalized));
                     if(Vector2.Dot(vForce.normalized, target.normalized) > 0.9f &&  m_jumpCheck == true)
                     {
                         m_jumpCheck = false;
