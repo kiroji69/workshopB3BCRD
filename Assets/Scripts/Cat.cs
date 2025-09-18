@@ -52,8 +52,8 @@ public class Cat : MonoBehaviour
         }
 
 
-        Collider2D collider = Physics2D.OverlapCircle(m_groundRef.position + Vector3.up * m_bodyOffset, .2f, m_walkableMask);
-        Collider2D trampoline = Physics2D.OverlapCircle(m_groundRef.position + Vector3.up * m_bodyOffset, .2f, m_jumpLayers);
+        Collider2D collider = Physics2D.OverlapCircle(m_groundRef.position , .2f, m_walkableMask);
+        Collider2D trampoline = Physics2D.OverlapCircle(m_groundRef.position , .2f, m_jumpLayers);
 
         Vector2 target = Laser.Get().transform.position-m_rb.transform.position;
         
@@ -127,12 +127,7 @@ public class Cat : MonoBehaviour
 
     }
 
-    private int GetRnd()
-    {
-        int rnd = Random.Range(1, 10);
-
-        return rnd;
-    }
+ 
 
     //private void OnTriggerStay2D(Collision2D collision)
     //{

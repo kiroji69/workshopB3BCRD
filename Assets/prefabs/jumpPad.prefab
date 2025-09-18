@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a136ae398cc6046bb79562013b7c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_treshold: 0
+  m_treshold: 0.35
   m_collider: {fileID: 5157277736828696663}
 --- !u!114 &5182114754064083643
 MonoBehaviour:
@@ -218,6 +218,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108b01b55df90204b9cabf50787d90fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_puissanceX: 50
-  m_puissanceY: 250
-  m_destination: {fileID: 9220993456940558534}
+  jumpPoints: []

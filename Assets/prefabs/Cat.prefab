@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1774604015760601995}
   - component: {fileID: 3027927881885970961}
   - component: {fileID: 3470780493019571677}
-  - component: {fileID: 3111480798461562051}
+  - component: {fileID: 915493785933402209}
   m_Layer: 6
   m_Name: Cat
   m_TagString: Player
@@ -142,8 +142,11 @@ MonoBehaviour:
   m_speed: 1
   m_bodyOffset: 0
   m_groundRef: {fileID: 0}
+  m_yDetectionTreshold: 0
+  m_xDetectionTreshold: 0
   m_minDoSmth: 1
   m_maxDoSmth: 5
+  m_attentionRange: 0
   m_jumpCheck: 1
 --- !u!95 &3470780493019571677
 Animator:
@@ -166,8 +169,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &3111480798461562051
-BoxCollider2D:
+--- !u!70 &915493785933402209
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -181,7 +184,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -198,16 +201,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -0.51788723}
+  m_Size: {x: 0.9876387, y: 1.9642255}
+  m_Direction: 0
