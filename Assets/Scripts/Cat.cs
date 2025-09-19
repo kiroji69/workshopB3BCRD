@@ -19,7 +19,9 @@ public class Cat : MonoBehaviour
     [SerializeField] float m_yDetectionTreshold;
     [SerializeField] float m_xDetectionTreshold;
 
-    
+    public AudioSource audiosource;
+    public AudioClip start_Jump;
+    public AudioClip end_jump;
 
     bool m_shouldDoSmth = true;
     [SerializeField] int m_minDoSmth = 1;
@@ -69,6 +71,7 @@ public class Cat : MonoBehaviour
 
         if(collider != null)
         {
+
             m_isJumping = false;
         }
 
@@ -91,6 +94,7 @@ public class Cat : MonoBehaviour
                     //print(" dot: " + Vector2.Dot(vForce.normalized, target.normalized));
                     if(Vector2.Dot(vForce.normalized, target.normalized) > 0.9f &&  m_jumpCheck == true)
                     {
+                        audiosource.PlayOneShot(start_Jump,1);
                         m_isJumping = true;
                         m_jumpCheck = false;
                         m_rb.AddForce(jumpPoint.force);
