@@ -6,14 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] Animator animator;
+
+
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene("Level");
+    }
 
     public void StartGame()
     {
-        SceneManager.LoadSceneAsync("Level");
+        animator.SetBool("isPressed", true);
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
+
 }
