@@ -12,6 +12,8 @@ public class Basket : Interactible
 
     private void Update()
     {
+
+        
         if (m_sleepingTime == true)
         {
             m_sleepTimer -= Time.deltaTime;
@@ -20,12 +22,13 @@ public class Basket : Interactible
         {
             Cat.Get().GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
-            Cat.Get().m_rb.AddForce(new Vector2(-10, 0));
+            Cat.Get().m_rb.AddForce(new Vector2(-5, 0));
         }
         if (m_sleepTimer < 0.0f)
         {
             Cat.Get().m_rb.Sleep();
             Cat.Get().m_rb.WakeUp();
+            Cat.Get().m_isSleeping = false;
             m_sleepingTime = false;
             m_sleepTimer = 3.5f;
         }
@@ -36,6 +39,8 @@ public class Basket : Interactible
     {
         Cat.Get().m_rb.transform.position = this.transform.position;
         Cat.Get().GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+
+        Cat.Get().m_isSleeping = true;
         print("dodo miaou"); // animation ici
 
         m_sleepingTime = true;

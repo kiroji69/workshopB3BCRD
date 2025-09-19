@@ -26,8 +26,10 @@ public class Vase : Interactible
 
         if (m_stopTimer <= 0.0f)
         {
+            m_stopTime=false;
             Cat.Get().GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-
+            Cat.Get().m_isDestroyingLeft = false;
+            Cat.Get().m_isDestroyingRight = false;
             Destroy(this.gameObject);
         }
     }
@@ -38,12 +40,23 @@ public class Vase : Interactible
         //Cat.Get().m_animator.
         m_stopTime = true;
         Cat.Get().GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-       
-           
-
         
 
-        
+        float side =Cat.Get().transform.position.x - this.gameObject.transform.position.x;
+
+        if (Mathf.Sign(side) < 0)
+        {
+            Cat.Get().m_isDestroyingLeft = true;
+        }
+        else
+        {
+            Cat.Get().m_isDestroyingRight = true;
+        }
+
+        print(Mathf.Sign(side));
+
+
+
     }
 
 
