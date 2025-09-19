@@ -19,6 +19,7 @@ public class Cat : MonoBehaviour
     [SerializeField] float m_yDetectionTreshold;
     [SerializeField] float m_xDetectionTreshold;
 
+    
 
     bool m_shouldDoSmth = true;
     [SerializeField] int m_minDoSmth = 1;
@@ -26,8 +27,12 @@ public class Cat : MonoBehaviour
     [SerializeField] int m_attentionRange;
     [SerializeField] public bool m_jumpCheck = true;
 
+    [HideInInspector] public bool m_isJumping;
+    [HideInInspector] public bool m_isSleeping;
+    [HideInInspector] public bool m_isDestroyingLeft;
+    [HideInInspector] public bool m_isDestroyingRight;
 
-    
+
     private void Start()
     {
        
@@ -36,7 +41,12 @@ public class Cat : MonoBehaviour
     void Update()
     {
 
-        if(m_shouldDoSmth == true)
+        m_animator.SetBool("isJumping", m_isJumping);
+        m_animator.SetBool("isSleeping", m_isSleeping);
+        m_animator.SetBool("isDestroyingLeft", m_isDestroyingLeft);
+        m_animator.SetBool("isDestroyingRight", m_isDestroyingRight);
+
+        if (m_shouldDoSmth == true)
         {
             m_actiontimer -= Time.deltaTime;
         }
@@ -57,6 +67,11 @@ public class Cat : MonoBehaviour
         Collider2D collider = Physics2D.OverlapCircle(m_groundRef.position , .2f, m_walkableMask);
         Collider2D trampoline = Physics2D.OverlapCircle(m_groundRef.position , .2f, m_jumpLayers);
 
+        if(collider != null)
+        {
+            m_isJumping = false;
+        }
+
         Vector2 target = Laser.Get().transform.position-m_rb.transform.position;
         
         if (Laser.Get().m_enabled == true && target.magnitude <= m_attentionRange)
@@ -76,6 +91,7 @@ public class Cat : MonoBehaviour
                     //print(" dot: " + Vector2.Dot(vForce.normalized, target.normalized));
                     if(Vector2.Dot(vForce.normalized, target.normalized) > 0.9f &&  m_jumpCheck == true)
                     {
+                        m_isJumping = true;
                         m_jumpCheck = false;
                         m_rb.AddForce(jumpPoint.force);
                         break;
