@@ -1241,6 +1241,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3470780493019571677, guid: 5afffab31a53a9a478c564377043d635, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1c37c2b73b349841af37b12108819f3, type: 2}
     - target: {fileID: 6921141417268720418, guid: 5afffab31a53a9a478c564377043d635, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 3
@@ -1259,7 +1263,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2786167213760097472, guid: 5afffab31a53a9a478c564377043d635, type: 3}
       insertIndex: -1
       addedObject: {fileID: 382969089}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1583324474658336977, guid: 5afffab31a53a9a478c564377043d635, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1906195097}
   m_SourcePrefab: {fileID: 100100000, guid: 5afffab31a53a9a478c564377043d635, type: 3}
 --- !u!1 &1266747654
 GameObject:
@@ -1793,6 +1800,30 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af2e76f91cf850478757a1514260cc3, type: 3}
+--- !u!1 &1906195092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1583324474658336977, guid: 5afffab31a53a9a478c564377043d635, type: 3}
+  m_PrefabInstance: {fileID: 1241127781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1906195095 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1774604015760601995, guid: 5afffab31a53a9a478c564377043d635, type: 3}
+  m_PrefabInstance: {fileID: 1241127781}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1906195097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906195092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bcb5fe5739c9c4abaea38dbb058b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1343629243}
+  rb: {fileID: 1906195095}
 --- !u!1001 &3402278820015098210
 PrefabInstance:
   m_ObjectHideFlags: 0
