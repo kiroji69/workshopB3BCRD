@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cat : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D m_rb;
+    [SerializeField] public Rigidbody2D m_rb;
     [SerializeField] SpriteRenderer m_sprite;
     [SerializeField] internal Animator m_animator;
     [SerializeField] LayerMask m_walkableMask;
