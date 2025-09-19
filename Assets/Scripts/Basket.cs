@@ -7,7 +7,8 @@ public class Basket : Interactible
     [SerializeField]Sprite m_sprite;
 
     float m_sleepTimer = 3.5f;
-
+    public AudioSource audiosource;
+    public AudioClip ronron;
     bool m_sleepingTime= false;
 
     private void Update()
@@ -42,7 +43,7 @@ public class Basket : Interactible
 
         Cat.Get().m_isSleeping = true;
         print("dodo miaou"); // animation ici
-
+        audiosource.PlayOneShot(ronron, 1);
         m_sleepingTime = true;
 
 

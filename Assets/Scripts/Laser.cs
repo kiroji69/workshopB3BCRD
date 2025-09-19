@@ -18,8 +18,10 @@ public class Laser : MonoBehaviour
     float m_timerBattery;
     float m_timerRecharge = 1.0f;
     bool m_usable = true;
-    
-    
+    public AudioSource audioSource;
+    public AudioClip mouseDownAudioClip;
+    public AudioClip mouseUpAudioClip;
+
 
     public bool m_enabled = false;
     
@@ -69,6 +71,7 @@ public class Laser : MonoBehaviour
 
         if(m_timerBattery <=0)
         {
+            audioSource.PlayOneShot(mouseUpAudioClip, 1);
             m_enabled = false;
             m_timerBattery = (float)m_batteryMax / m_charge;
         }
@@ -89,6 +92,7 @@ public class Laser : MonoBehaviour
 
             if (m_battery >= 2 && m_usable == true)
             {
+                audioSource.PlayOneShot(mouseDownAudioClip, 1);
                 m_battery -= 2;
                 m_enabled = true;
                 m_usable = false;

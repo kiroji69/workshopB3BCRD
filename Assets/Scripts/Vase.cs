@@ -9,7 +9,8 @@ public class Vase : Interactible
     [SerializeField] float m_fallSpeed;
 
     bool m_stopTime = false;
-
+    public AudioSource m_audioSource;
+    public AudioClip breakingVase;
     float m_stopTimer = 2.0f;
 
     private void Update()
@@ -31,6 +32,7 @@ public class Vase : Interactible
             Cat.Get().m_isDestroyingLeft = false;
             Cat.Get().m_isDestroyingRight = false;
             Destroy(this.gameObject);
+            m_audioSource.PlayOneShot(breakingVase, 1);
         }
     }
 
