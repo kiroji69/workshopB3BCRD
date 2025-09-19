@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Laser : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Laser : MonoBehaviour
     SpriteRenderer m_spriteRenderer;
 
     [SerializeField]public int m_batteryMax = 4;
+    [SerializeField]Image m_image;
 
     int m_battery;
     float m_charge = 2.0f;
@@ -38,6 +40,10 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_image.fillAmount = m_battery/(float)m_batteryMax;
+
+
+
         if(m_enabled == true)
         {
 

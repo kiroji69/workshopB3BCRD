@@ -18,9 +18,9 @@ public class CameraTransition : MonoBehaviour
     {
         Vector3 pos = Cat.Get().transform.position;
 
-        pos.x = valueSnap(pos.x, m_snapX);
+        pos.x = Mathf.Clamp(valueSnap(pos.x, m_snapX),0 , m_snapX);
 
-        pos.y = valueSnap(pos.y,m_snapY);
+        pos.y = Mathf.Clamp(valueSnap(pos.y,m_snapY), 0 , m_snapY);
 
         
 
