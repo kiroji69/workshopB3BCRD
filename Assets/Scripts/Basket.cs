@@ -20,7 +20,7 @@ public class Basket : Interactible
         {
             Cat.Get().GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
-            Cat.Get().m_rb.AddForce(new Vector2(-10, 0));
+            Cat.Get().m_rb.AddForce(new Vector2(-5, 0));
         }
         if (m_sleepTimer < 0.0f)
         {
